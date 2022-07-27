@@ -1,0 +1,97 @@
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+    height: 100%;
+  }
+  
+  /* 
+   * Optional: Makes the sample page fill the window. 
+   */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #floating-panel {
+    /* position: absolute; */
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
+  }
+
+  h1{
+    text-align: center;
+    margin-bottom: 1em ;
+    color: hsl(236, 32%, 26%);
+  }
+
+  input, select {
+    border: 2px solid hsl(236, 32%, 26%);
+    padding: 2px;
+    margin-bottom: 1em ;
+    padding: 6px ;
+  }
+  
+  input:hover, select:hover {
+    border: 2px solid #fc2f70 ;
+  }
+  
+  button {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: hsl(236, 32%, 26%);
+  }
+  
+  button::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fc2f70;
+    transform-origin: center right;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  button:hover::before {
+    transform-origin: center left;
+    transform: scaleX(1);
+  }
+  
+  .infos{
+    margin-left: 25px;
+    font-weight: bold;
+    color: hsl(236, 32%, 26%);
+  }
+  #map, #displayResults{
+    display: none;
+  }
