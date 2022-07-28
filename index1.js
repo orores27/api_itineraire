@@ -35,7 +35,6 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   } else if (transport == "pied"){
     transportOptions = google.maps.TravelMode.WALKING;
   }
-console.log(transport);
   directionsService
     .route({
       origin: {
